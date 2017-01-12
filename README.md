@@ -13,6 +13,7 @@ LIKE '%Houston%'
 ```
 
 Which returns
+
 | SSN       | FName    | LName   | Address                  |Salary |
 |:---------:|:--------:|:-------:|:------------------------:|:-----:|
 | 123456789 | John     | Smith   | 731 Fondren, Houston, TX | 30000 |
