@@ -18,7 +18,7 @@ CREATE TABLE department(
 )
 ```
 
-Using 
+After inserting the data, using 
 
 ```sql
 SELECT * FROM department
@@ -39,18 +39,19 @@ I created the Dependent table using:
 
 ```sql
 CREATE TABLE dependent(
-    DName VARCHAR(15) NOT NULL,
-	DNo INT NOT NULL,
-    MGRSSN CHAR(11) NOT NULL,
-    MgrStartDate DATE NOT NULL,
-    PRIMARY KEY(DNo)
+    Dependent_name CHAR(40) NOT NULL,
+    Sex CHAR(1) NOT NULL,
+    BDate DATE NOT NULL,
+    Relationship CHAR(10) NOT NULL,
+    SSN CHAR(11) NOT NULL,
+    PRIMARY KEY(Dependent_name, SSN)
 )
 ```
 
-Using 
+After inserting the data, using 
 
 ```sql
-SELECT * FROM department
+SELECT * FROM dependent
 ```
 
 we get a dump of its contents:
@@ -68,6 +69,24 @@ we get a dump of its contents:
 
 ### DeptLocations
 
+I created the DeptLocations table using: 
+
+```sql
+CREATE TABLE deptlocations(
+    DNo INT NOT NULL,
+    DLocation VARCHAR(40) NOT NULL,
+    PRIMARY KEY(DNo, DLocation)
+)
+```
+
+After inserting the data, using 
+
+```sql
+SELECT * FROM deptlocations
+```
+
+we get a dump of its contents:
+
 | DNo | DLocation |
 |:---:|:---------:|
 |   1 | Houston   |
@@ -78,6 +97,32 @@ we get a dump of its contents:
 
 
 ### Employee
+
+I created the Employee table using: 
+
+```sql
+CREATE TABLE employee(
+    SSN CHAR(11) NOT NULL,
+    BDate DATE NOT NULL,
+    Sex CHAR(1) NOT NULL,
+    Address VARCHAR(40) NOT NULL,
+    Salary INT NOT NULL,
+    FName CHAR(20) NOT NULL,
+    Minit CHAR(1) NOT NULL,
+    LName CHAR(20) NOT NULL,
+    DNo INT NOT NULL,
+    SuperSSN CHAR(11),
+    PRIMARY KEY(SSN)
+)
+```
+
+After inserting the data, using 
+
+```sql
+SELECT * FROM employee
+```
+
+we get a dump of its contents:
 
 | SSN       | BDate      | Sex | Address                  | Salary | FName    | Minit | LName   | DNo | SuperSSN  |
 |:---------:|:----------:|:---:|:------------------------:|:------:|:--------:|:-----:|:-------:|:---:|:---------:|
@@ -93,6 +138,26 @@ we get a dump of its contents:
 
 ### Project
 
+I created the Project table using:
+
+```sql
+CREATE TABLE project(
+    PName CHAR(20) NOT NULL,
+    PNo INT NOT NULL,
+    PLocation CHAR(40) NOT NULL,
+    DNo INT NOT NULL,
+    PRIMARY KEY(PNo)
+)
+```
+
+After inserting the data, using 
+
+```sql
+SELECT * FROM project
+```
+
+we get a dump of its contents:
+
 | PName           | PNo | PLocation | DNo |
 |:---------------:|:---:|:---------:|:---:|
 | ProductX        |   1 | Bellaire  |   5 |
@@ -104,6 +169,25 @@ we get a dump of its contents:
 
 
 ### Works_On
+
+I created the Works_On table using:
+
+```sql
+CREATE TABLE works_on(
+    SSN CHAR(11) NOT NULL,
+    PNo INT NOT NULL,
+    Hours DECIMAL(5,2) NOT NULL,
+    PRIMARY KEY(SSN, PNo)
+)
+```
+
+After inserting the data, using 
+
+```sql
+SELECT * FROM works_on
+```
+
+we get a dump of its contents:
 
 | SSN       | PNo | Hours |
 |:---------:|:---:|:-----:|
@@ -158,9 +242,9 @@ GROUP BY project.PNo
 where the output is
 
 | PNo | SUM(works\_on.Hours) |
-|:---:|:-------------------:|
-| 10  |               55.00 |
-| 30  |               25.00 |
+|:---:|:--------------------:|
+| 10  |                55.00 |
+| 30  |                25.00 |
 
 
 **List the project number, project name and number of employees working on a
@@ -179,10 +263,10 @@ HAVING COUNT(works_on.SSN) > 2
 where the output is
 
 | PNo | PName           | COUNT(works\_on.SSN) |
-|:---:|:---------------:|:-------------------:|
-|  2  | ProductY        |                   3 |
-| 10  | Computerization |                   3 |
-| 20  | Reorganization  |                   3 |
+|:---:|:---------------:|:--------------------:|
+|  2  | ProductY        |                    3 |
+| 10  | Computerization |                    3 |
+| 20  | Reorganization  |                    3 |
 
 **List the SSN, name (first and last) and salary of all employees that are managers.**
 
