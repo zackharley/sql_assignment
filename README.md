@@ -2,9 +2,10 @@
 
 ## Part 1 - SQL
 
+### Populate the DB
 First we want to populate the DB.
 
-### Department
+#### Department
 
 I created the Department table using:
 
@@ -33,7 +34,7 @@ we get a dump of its contents:
 | Research       |	 5 | 333445555 | 1988-05-22   |	
 
 
-### Dependent
+#### Dependent
 
 I created the Dependent table using:
 
@@ -67,7 +68,7 @@ we get a dump of its contents:
 | Theodore       | M   | 1963-10-25 | SON          | 333445555 |
 
 
-### DeptLocations
+#### DeptLocations
 
 I created the DeptLocations table using: 
 
@@ -96,7 +97,7 @@ we get a dump of its contents:
 |   5 | Sugarland |
 
 
-### Employee
+#### Employee
 
 I created the Employee table using: 
 
@@ -136,7 +137,7 @@ we get a dump of its contents:
 | 999887777 | 1968-07-19 | F   | 3321 Castle, Spring,TX   |  25000 | Alicia   | J     | Zelaya  |   4 | 987654321 |
 
 
-### Project
+#### Project
 
 I created the Project table using:
 
@@ -168,7 +169,7 @@ we get a dump of its contents:
 | Newbenefits     |  30 | Stafford  |   4 |
 
 
-### Works_On
+#### Works_On
 
 I created the Works_On table using:
 
@@ -201,7 +202,9 @@ we get a dump of its contents:
 | 453453453 |   2 |    20 |
 | 666884444 |   3 |    40 |
 
-**List the SSN, name (first and last), address and salary of all employees working in a department that has a location in "Houston".**
+### Queries
+
+**1. List the SSN, name (first and last), address and salary of all employees working in a department that has a location in "Houston".**
 
 The query is 
 ```sql
@@ -221,7 +224,7 @@ Which returns
 | 888665555 | James    | Borg    | 450 Stone, Houston, TX   | 55000 |
 | 987987987 | Ahmad    | Jabbar  | 980 Dallas, Houston, TX  | 25000 |
 
-**For each project managed by the "Administration" department, list the project
+**2. For each project managed by the "Administration" department, list the project
 number and the total number of hours worked on that project by employees of the
 department.**
 
@@ -247,7 +250,7 @@ where the output is
 | 30  |                25.00 |
 
 
-**List the project number, project name and number of employees working on a
+**3. List the project number, project name and number of employees working on a
 project for all projects with more than 2 employees working on it.**
 
 The query is
@@ -268,7 +271,7 @@ where the output is
 | 10  | Computerization |                    3 |
 | 20  | Reorganization  |                    3 |
 
-**List the SSN, name (first and last) and salary of all employees that are managers.**
+**4. List the SSN, name (first and last) and salary of all employees that are managers.**
 
 The query is
 
@@ -286,7 +289,7 @@ where the output is
 | 888665555 | James    | Borg    |  55000 |
 | 987654321 | Jennifer | Wallace |  43000 |
 
-**List the SSN, name (first and last) and salary of all employees who earn more
+**5. List the SSN, name (first and last) and salary of all employees who earn more
 than the average salary for the company.**
 
 The query is
@@ -309,7 +312,7 @@ Where the output is
 | 888665555 | James    | Borg    |  55000 |
 | 987654321 | Jennifer | Wallace |  43000 |
 
-**For each project, give the project number and name, the number of employees
+**6. For each project, give the project number and name, the number of employees
 working on the project, and the average number of hours worked by employees on
 that project. Order the results by project number**
 
@@ -336,7 +339,7 @@ where the output is
 |  30 | Newbenefits     |                   2 | 12.500000           |
 
 
-**For all employees with at least one dependent, list their SSN, name (first and last),
+**7. For all employees with at least one dependent, list their SSN, name (first and last),
 salary and the name of the department for which they work.**
 
 The query is
@@ -359,3 +362,7 @@ where the output is
 | 987654321 | Jennifer | Wallace |  43000 | Administration |
 | 123456789 | John     | Smith   |  30000 | Research       |
 | 333445555 | Franklin | Wong    |  40000 | Research       |
+
+
+## Part 2 - Relational Algebra
+
