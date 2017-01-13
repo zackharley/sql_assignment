@@ -1,0 +1,63 @@
+/* The file contains the table name, the attribute names and the data for each table */
+Department
+DName	DNo	MGRSSN	MgrStartDate						
+Headquarters	1	888665555	1981-06-19						
+Administration	4	987654321	1995-01-01						
+Research	5	333445555	1988-05-22						
+
+Dependent
+Dependent_name	Sex	Bdate	Relationship	SSN					
+Abner	M	1942-02-28	SPOUSE	987654321					
+Alice	F	1988-12-30	DAUGHTER	123456789					
+Alice	F	1966-04-05	DAUGHTER	333445555					
+Elizabeth	F	1967-05-05	SPOUSE	123456789					
+Joy	F	1958-05-03	SPOUSE	333445555					
+Michael	M	1988-01-04	SON	123456789					
+Theodore	M	1963-10-25	SON	333445555					
+
+DeptLocations
+DNo	DLocation								
+1	Houston								
+4	Stafford								
+5	Bellaire								
+5	Houston								
+5	Sugarland								
+
+Employee
+SSN	BDate	Sex	Address	Salary	FName	Minit	LName	DNo	SuperSSN
+123456789	1965-01-09	M	"731 Fondren, Houston, TX"	30000	John	B	Smith	5	333445555
+333445555	1955-12-08	M	"638 Voss, Houston, TX"	40000	Franklin	T	Wong	5	888665555
+453453453	1972-07-31	F	"5631 Rice, Houston, TX"	25000	Joyce	A	English	5	333445555
+666884444	1962-09-15	M	"975 Fire Oak, Humble, TX"	38000	Ramesh	K	Narayan	5	333445555
+888665555	1937-11-10	M	"450 Stone, Houston, TX"	55000	James	E	Borg	1	NULL
+987654321	1941-06-20	F	"291 Berry, Bellaire, TX"	43000	Jennifer	S	Wallace	4	888665555
+987987987	1969-03-29	M	"980 Dallas, Houston, TX"	25000	Ahmad	V	Jabbar	4	987654321
+999887777	1968-07-19	F	"3321 Castle, Spring,TX"	25000	Alicia	J	Zelaya	4	987654321
+
+Project
+PName	PNo	PLocation	DNo						
+ProductX	1	Bellaire	5						
+ProductY	2	Sugarland	5						
+ProductZ	3	Houston	5						
+Computerization	10	Stafford	4						
+Reorganization	20	Houston	1						
+Newbenefits	30	Stafford	4						
+
+Works_On
+SSN	PNo	Hours							
+123456789	1	32.5							
+123456789	2	7.5							
+333445555	2	10							
+333445555	3	10							
+333445555	10	10							
+333445555	20	10							
+453453453	1	20							
+453453453	2	20							
+666884444	3	40							
+888665555	20	NULL							
+987654321	20	15							
+987654321	30	20							
+987987987	10	35							
+987987987	30	5							
+999887777	10	10							
+999887777	30	30							
