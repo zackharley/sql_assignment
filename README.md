@@ -343,7 +343,7 @@ where the output is
 | 3 | ProductZ | 2 | 25.000000 |
 | 10 | Computerization | 3 | 18.333333 |
 | 20 | Reorganization | 3 | 8.333333 |
-| 30 | Newbenefits | 2 | 12.500000 |
+| 30 | Newbenefits | 3 | 18.333333 |
 
 **7. For all employees with at least one dependent, list their SSN, name \(first and last\),  
 salary and the name of the department for which they work.**
