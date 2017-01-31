@@ -262,7 +262,7 @@ where the output is
 | PNo | SUM\(works\_on.Hours\) |
 | :---: | :---: |
 | 10 | 55.00 |
-| 30 | 25.00 |
+| 30 | 55.00 |
 
 **3. List the project number, project name and number of employees working on a  
 project for all projects with more than 2 employees working on it.**
@@ -284,6 +284,7 @@ where the output is
 | 2 | ProductY | 3 |
 | 10 | Computerization | 3 |
 | 20 | Reorganization | 3 |
+| 30 | Newbenefits | 3 |
 
 **4. List the SSN, name \(first and last\) and salary of all employees that are managers.**
 
