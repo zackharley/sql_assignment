@@ -395,7 +395,6 @@ $$
 
 $$
 \Pi_{\text{employee.SSN, FName, LName, Dependent_name, dependent.Bdate, Relationship}} \sigma_{\text{DName = 'Research'}} (\text{dependent } ⟖ \text{ employee} \Join \text{department})
-
 $$
 
 **4. List the SSN, name (first and last) and salary of all employees that are managers.** 
