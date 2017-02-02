@@ -367,36 +367,3 @@ where the output is
 | 987654321 | Jennifer | Wallace | 43000 | Administration |
 | 123456789 | John | Smith | 30000 | Research |
 | 333445555 | Franklin | Wong | 40000 | Research |
-
-## Part 2 - Relational Algebra
-
-**1. List  the  number,  name  and  location  of  all  projects  run  by  the  department  with manager “Franklin Wong”**
-
-$$
-\Pi_{\text{PName, PNo, PLocation}} \sigma_{\text{FName = 'Franklin' } \wedge \text{ LName = 'Wong' } \wedge \text{ MGRSSN=SSN}} (\text{project} \Join \text{department} \Join \text{employee})
-$$
-
-**2. List the employee number and name (first and last) and project number and name for all employees who have salary > 30,000 and who have worked over 20 hours on that project.**
-
-$$
-\Pi_{\text{SSN, FName, LName, PNo, PName}} \sigma_{\text{Hours} > 20 \wedge \text{Salary} > 30000} (\text{works_on} \Join \text{employee} \Join \text{project})
-$$
-
-**3. List the employee number and name (first and last) in the “Research” department and,  if  they  have  dependents  then  list  the dependent’s  name,  birthdate  and relationship to the employee.**
-
-$$
-\Pi_{\text{employee.SSN, FName, LName, Dependent_name, dependent.Bdate, Relationship}} \sigma_{\text{DName = 'Research'}} (\text{dependent } ⟖ \text{ employee} \Join \text{department})
-$$
-
-**4. List the SSN, name (first and last) and salary of all employees that are managers.** 
-
-$$
-\Pi_{\text{SSN, FName, LName, Salary}} \sigma_{\text{SSN} = \text{MGRSSN}} (\text{employee} \Join {department})
-$$
-
-**5. For each project managed by the “Administration” department list project number and name and the total number of hours worked  on that project by employees of the department**
-
-$$
-\gamma_{\text{PName, PNo, DNo; SUM(Hours)} \rightarrow \text{hours_sum}} \sigma_{\text{DName} = \text{'Administration'}} (\text{project} \Join \text{works_on} \Join \text{department})
-$$
-
